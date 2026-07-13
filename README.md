@@ -3,6 +3,8 @@
 A lightweight, pure-GPIO driver for raw 8×8 LED matrix displays — no MUX chip required.
 Works on **any MicroPython board**: Raspberry Pi Pico, ESP32, RP2040, STM32, and more.
 
+Authored by **Drik Paul**
+
 ---
 
 ## Features
@@ -292,3 +294,7 @@ Timer callback (every speed_ms ms):
 | ISR period | 156 µs |
 | Work per ISR | ≤ 9 pin.value() calls, O(1) |
 | Async scroll callback | 8 byte copies, O(1) |
+
+---
+
+Authored by **Drik Paul**
