@@ -108,7 +108,7 @@ m.blink(times=2)                 # blink current image
 
 ```python
 Matrix8x8(row_pins, col_pins,
-          common_anode=False, frame_rate=50, timer_id=0, gamma=True)
+          common_anode=False, frame_rate=50, timer_id=-1, gamma=True)
 ```
 
 | Parameter | Type | Default | Description |
@@ -117,7 +117,7 @@ Matrix8x8(row_pins, col_pins,
 | `col_pins` | `list[int\|Pin]` | — | 8 GPIO pin numbers or Pin objects for columns |
 | `common_anode` | `bool` | `False` | True for common-anode matrices |
 | `frame_rate` | `int` | `50` | Display refresh rate in Hz |
-| `timer_id` | `int` | `0` | `machine.Timer` ID for scan timer |
+| `timer_id` | `int` | `-1` | `machine.Timer` ID for scan timer |
 | `gamma` | `bool` | `True` | Apply gamma-2.2 correction to brightness |
 
 ---
@@ -174,8 +174,8 @@ m.center_char('A')           # auto-centres a 5-wide glyph on 8 cols
 # Blocking scroll
 m.scroll_text("Hello!", speed_ms=80, repeat=False, padding=True, spacing=1)
 
-# Non-blocking scroll (uses Timer timer_id, default 1)
-m.scroll_text_async("Hello!", speed_ms=80, on_done=callback, timer_id=1)
+# Non-blocking scroll (uses Timer timer_id, default -1)
+m.scroll_text_async("Hello!", speed_ms=80, on_done=callback, timer_id=-1)
 m.stop_scroll()              # stop async scroll at any time
 
 # Character slideshow

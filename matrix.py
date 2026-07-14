@@ -40,7 +40,7 @@ class Matrix8x8:
     """8x8 LED matrix driver. row_pins and col_pins are lists of 8 GPIO numbers."""
 
     def __init__(self, row_pins, col_pins,
-                 common_anode=False, frame_rate=50, timer_id=0, gamma=True):
+                 common_anode=False, frame_rate=50, timer_id=-1, gamma=True):
         if len(row_pins) != _SZ or len(col_pins) != _SZ:
             raise ValueError("need exactly 8 row and 8 col pins")
 
@@ -334,7 +334,7 @@ class Matrix8x8:
             _once()
 
     def scroll_text_async(self, text, speed_ms=80, on_done=None,
-                          padding=True, spacing=1, timer_id=1):
+                          padding=True, spacing=1, timer_id=-1):
         """Non-blocking scroll. Pre-renders all frames, callback just copies 8 bytes."""
         self.stop_scroll()
         cols = self._build_columns(text, spacing)

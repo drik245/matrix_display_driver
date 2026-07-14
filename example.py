@@ -77,7 +77,7 @@ done = [False]
 def on_done(): done[0] = True
 
 m.scroll_text_async("Async scroll!  MicroPython 8x8  ",
-                    speed_ms=65, on_done=on_done, timer_id=1)
+                    speed_ms=65, on_done=on_done, timer_id=-1)
 
 ticks = 0
 while not done[0]:
